@@ -10,3 +10,6 @@ usb_mschosttest.c为linux PC机上主机应用层数据接收程序
 注：设备端 disconnect函数会在模块probe后 主机对其复位而调用，因此这里面不应该释放设备端Gadget probe的资源，因为复位后不会再调用设备端Gadget 模块probe函数。disconnect函数不应该注销设备 因为这只是将设备从主机上拔下来，不应该使设备端卸载驱动。
 setup阶段会重置端点1，需要在设置令牌包到达后开启端点1。
 
+Makefie:
+make 编译usb_mschost.c驱动模块
+make test编译usb_mschosttest.c应用程序
